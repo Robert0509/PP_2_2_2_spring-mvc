@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:border="http://java.sun.com/xml/ns/persistence/orm">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список машин</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Модель</th>
+        <th>Двигатель</th>
+        <th>Серия</th>
+    </tr>
+    <tr th:each="car: ${car}">
+        <td th:text="${car.model}">...</td>
+        <td th:text="${car.engine}">...</td>
+        <td th:text="${car.series}">...</td>
+    </tr>
+</table>
+<tr>
+    <td colspan="3" th:text="${cars.parameters}">...</td>
+</tr>
+</body>
+</html>
