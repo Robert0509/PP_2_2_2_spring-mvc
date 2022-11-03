@@ -9,7 +9,7 @@ import java.util.List;
 
 public class CarServiceImpl implements CarService{
     public List<Car> cars = new ArrayList<>();
-    private static int count= -10;
+    private static int count= 0;
     {
         cars.add(new Car(++count,"BMW","Gasoline", 111));
         cars.add(new Car(++count,"Mercedes-Benz","Diesel", 999));
@@ -20,7 +20,7 @@ public class CarServiceImpl implements CarService{
 
 
     @Override
-    public List<Car> show(String id) {
+    public List<Car> getCars(String id) {
         return cars.stream().limit(Long.parseLong(id)).toList();
     }
 }

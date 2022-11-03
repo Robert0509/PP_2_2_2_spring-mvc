@@ -43,21 +43,20 @@ public class Car {
         this.engine = engine;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return id == car.id && Objects.equals(model, car.model) && Objects.equals(engine, car.engine);
-    }
-
-
     public int getSeries() {
         return series;
     }
 
     public void setSeries(int series) {
         this.series = series;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return id == car.id && series == car.series && Objects.equals(model, car.model) && Objects.equals(engine, car.engine);
     }
 
     @Override
