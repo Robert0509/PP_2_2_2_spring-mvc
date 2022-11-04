@@ -9,13 +9,14 @@ import web.service.CarServiceImpl;
 @Controller
 public class CarController {
     private CarServiceImpl carService;
+
     public CarController(CarServiceImpl carService) {
         this.carService = carService;
     }
 
     @GetMapping(value = "/cars")
-    public String showCars(@RequestParam(value = "count", required = false, defaultValue = "5" ) String id, ModelMap model){
-        model.addAttribute("cars",carService.getCars(id));
+    public String showCars(@RequestParam(value = "count", required = false, defaultValue = "5") String id, ModelMap model) {
+        model.addAttribute("cars", carService.getCars(id));
 
         return "cars";
     }
